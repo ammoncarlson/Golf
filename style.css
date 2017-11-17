@@ -1,0 +1,15 @@
+    .container{
+        background-image: url("images/golf.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .dropdown {
+        font-size: 31px;
+        margin: 10px 0;
+    }
+    .courselist{
+        font-size: 20px;
+    }
+    .info{
+        font-size: 22px;
+    }
