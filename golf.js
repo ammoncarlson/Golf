@@ -75,6 +75,7 @@
             $("#pl" + playerId).remove();
             for(let h = 1; h <= numHoles.length; h++){
                 $("#player"+ playerId + "hole" + h).remove();
+                $("#totalhole" + playerId).remove();
             }
         }
 
