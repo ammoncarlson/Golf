@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Golf Score</title>
+    <link rel=“stylesheet” href=“https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css“>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="golf.js"></script>
     <link rel="stylesheet" href="style.css">
@@ -13,12 +14,11 @@
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
+    <script src="https://use.fontawesome.com/b6bab65453.js"></script>
 
 
 </head>
 <body onload="loadMe()">
- <div class="container">
     <div class="dropdown">
         <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Golf Courses Near Me
@@ -28,8 +28,21 @@
 
         </ul>
     </div>
-     <div class="infoboxstuff"></div>
- </div>
+     <div class="jQueryContainer">
+         <div id="infoboxstuff"></div>
+         <div class="tablethingy">
+
+             <select id="teeselect" onchange="buildCard(this.value)"></select>
+         </div>
+         <div class="card">
+             <div class="playercolumn">
+
+             </div>
+             <div class="scourColumn"></div>
+         </div>
+
+     </div>
+
 
 
 

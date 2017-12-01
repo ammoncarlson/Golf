@@ -1,10 +1,10 @@
-    .container{
+    body{
         background-image: url("images/golf.jpg");
         background-size: cover;
         background-repeat: no-repeat;
     }
     .dropdown {
-        font-size: 31px;
+        font-size: 25px;
         margin: 10px 0;
     }
     .courselist{
@@ -13,3 +13,44 @@
     .info{
         font-size: 22px;
     }
+    .tablethingy{
+        width:20px;
+    }
+    .img{
+        box-shadow:10px 10px 5px #555555;
+    }
+    .jQueryContainer{
+        display: flex;
+        justify-content: flex-start;
+    }
+    .golumn{
+        border: 1px solid black;
+        width: 40px;
+        min-height: 10px;
+    }
+    .scourColumn{
+        display: flex;
+        height: 146px;
+    }
+    .card{
+        display: flex;
+        margin: 0 10px 0 0;
+
+    }
+    .playercolumn {
+        margin: 40px 0 0 0;
+    }
+    .person{
+        padding: 0 5px 8PX;
+    }
+    .holeinput{
+        width: 38px;
+        min-height: 10px;
+    }
+    .holeheader{
+        min-height: 40px;
+    }
+    .deleteplayerstyle{
+        display: flex;
+    }
+
