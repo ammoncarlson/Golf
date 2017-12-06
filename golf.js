@@ -1,5 +1,5 @@
 
-
+    var playerscount = 4;
     var closeCourse;
     var currentCourse;
     var local_obj = {latitude: 40.4436, longitude: - 111.86311, radius: 100};
@@ -42,9 +42,13 @@
 
 
         function buildCard(mytee) {
+
+
             numHoles = currentCourse.course.holes;
             console.log(numHoles);
             $(".scourColumn").html("");
+            $(".playerlables").html("");
+            $("#add-button").remove();
 
             for (let c in numHoles) {
                 console.log(mytee);
@@ -61,12 +65,13 @@
             console.log("hello");
             for (let n = 1; n <= numplayers; n++) {
                 console.log(n);
-                $(".playercolumn").append("<div id='pl"+ n +"' class='deleteplayerstyle'><span class='fa fa-minus-circle' onclick='deleteplayer("+ n +")'></span><div class='person' contenteditable='true' >Player"+ n +"</div></div>");
+                $(".playerlables").append("<div id='pl"+ n +"' class='deleteplayerstyle'><span class='fa fa-minus-circle' onclick='deleteplayer("+ n +")'></span><div class='person' contenteditable='true' >Player"+ n +"</div></div>");
                 $(".total").append("<input class='holeinput' id='totalhole"+ n +"'>");
                 for (let h = 1; h <= numHoles.length; h++) {
                     $("#golumn" + h).append("<input id='player" + n + "hole" + h + "' type='text' class='holeinput' onkeyup='updatescour("+ n +")' >");
                 }
             }
+            $(".playercolumn").append("<span id='add-button' class='fa fa-plus-circle' onclick='addplayer()'>Add</span>");
 
         }
 
@@ -88,6 +93,16 @@
             $("#totalhole" + plyrid).val(plyrtotal);
         }
 
+        function addplayer() {
+            playerscount++;
+            numHoles = currentCourse.course.holes;
+                for (let h = 1; h <= numHoles.length; h++) {
+                    $("#golumn"+ h).append("<input id='player" + playerscount + "hole" + h + "' type='text' class='holeinput' onkeyup='updatescour(" + playerscount + ")' >");
+                }
+            $(".playerlables").append("<div id='pl" + playerscount + "' class='deleteplayerstyle'><span class='fa fa-minus-circle' onclick='deleteplayer(" + playerscount + ")'></span><div class='person' contenteditable='true' >Player" + playerscount + "</div></div>");
+            $(".total").append("<input class='holeinput' id='totalhole"+ playerscount +"'>");
+
+        }
 
 
 
