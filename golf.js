@@ -9,7 +9,6 @@
     function loadMe() {
         $.post("https://golf-courses-api.herokuapp.com/courses/", local_obj, function (data, status) {
             closeCourse = JSON.parse(data);
-            console.log(closeCourse);
             for (let p in closeCourse.courses)
                 $(".dropdown-menu").append("<div class='courselist'><a onclick='informationOpening("+ p +", "+ closeCourse.courses[p].id +")'>" + closeCourse.courses[p].name + "</a></div>");
             })
@@ -32,8 +31,6 @@
                 currentCourse = JSON.parse(data);
                 for (let t in currentCourse.course.tee_types) {
                     var teename = currentCourse.course.tee_types[t].tee_type;
-                    console.log(teename);
-
                     $("#teeselect").append("<option value='" + t + "'>"+ teename +" </option>");
                 }
             })
@@ -42,29 +39,23 @@
 
 
         function buildCard(mytee) {
-
-
             numHoles = currentCourse.course.holes;
-            console.log(numHoles);
             $(".scourColumn").html("");
             $(".playerlables").html("");
             $("#add-button").remove();
 
             for (let c in numHoles) {
-                console.log(mytee);
-                 var holepar = currentCourse.course.holes[c].tee_boxes[mytee].par;
-                 console.log(holepar);
-                $(".scourColumn").append("<div id='golumn" + (Number(c) + 1) + "'class='golumn'><div class='holeheader'><div class='parbox'>"+ (Number(c) + 1) +"</div><div>par " + holepar + "</div></div></div>")
+                var holepar = currentCourse.course.holes[c].tee_boxes[mytee].par;
+                var holeyards = currentCourse.course.holes[c].tee_boxes[mytee].yards;
+                $(".scourColumn").append("<div id='golumn" + (Number(c) + 1) + "'class='golumn'><div class='holeheader'><div class='parbox'>"+ (Number(c) + 1) +"</div><div>par " + holepar + "</div><div class='yards'>yards:"+ holeyards +"</div></div></div>")
 
             }
-            $(".scourColumn").append("<div class='total golumn'><div class='holeheader'>total</div><div>");
+            $(".scourColumn").append("<div class='total golumn'><div class='holeheadertotal'>total</div><div>");
             fillCard();
         }
 
         function fillCard() {
-            console.log("hello");
             for (let n = 1; n <= numplayers; n++) {
-                console.log(n);
                 $(".playerlables").append("<div id='pl"+ n +"' class='deleteplayerstyle'><span class='fa fa-minus-circle' onclick='deleteplayer("+ n +")'></span><div class='person' contenteditable='true' >Player"+ n +"</div></div>");
                 $(".total").append("<input class='holeinput' id='totalhole"+ n +"'>");
                 for (let h = 1; h <= numHoles.length; h++) {
@@ -87,7 +78,6 @@
         function updatescour(plyrid) {
             var plyrtotal = 0;
             for(let t = 1; t <= numHoles.length; t++){
-                console.log(plyrid);
                plyrtotal += Number($("#player"+ plyrid + "hole" + t).val());
             }
             $("#totalhole" + plyrid).val(plyrtotal);

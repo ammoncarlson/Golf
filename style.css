@@ -19,18 +19,14 @@
     .img{
         box-shadow:10px 10px 5px #555555;
     }
-    .jQueryContainer{
-        display: flex;
-        justify-content: flex-start;
-    }
     .golumn{
         border: 1px solid black;
-        width: 40px;
+        width: 47px;
         min-height: 10px;
     }
     .scourColumn{
         display: flex;
-        height: 146px;
+        height: 160px;
     }
     .card{
         display: flex;
@@ -44,7 +40,7 @@
         padding: 0 5px 8PX;
     }
     .holeinput{
-        width: 38px;
+        width: 45px;
         min-height: 10px;
     }
     .holeheader{
@@ -53,4 +49,14 @@
     .deleteplayerstyle{
         display: flex;
     }
+    .yards{
+        font-size: 10px;
+    }
+    #teeselect{
+        margin: 10px;
+    }
+    .holeheadertotal{
+        height: 54px;
+    }
+
 
