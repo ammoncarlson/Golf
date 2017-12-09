@@ -47,7 +47,8 @@
             for (let c in numHoles) {
                 var holepar = currentCourse.course.holes[c].tee_boxes[mytee].par;
                 var holeyards = currentCourse.course.holes[c].tee_boxes[mytee].yards;
-                $(".scourColumn").append("<div id='golumn" + (Number(c) + 1) + "'class='golumn'><div class='holeheader'><div class='parbox'>"+ (Number(c) + 1) +"</div><div>par " + holepar + "</div><div class='yards'>yards:"+ holeyards +"</div></div></div>")
+                var holehcp = currentCourse.course.holes[c].tee_boxes[mytee].hcp;
+                $(".scourColumn").append("<div id='golumn" + (Number(c) + 1) + "'class='golumn'><div class='holeheader'><div class='parbox'>"+ (Number(c) + 1) +"</div><div>par " + holepar + "</div><div class='yards'>yards:"+ holeyards +"</div><div class='handicap'>hcp"+ holehcp +"</div></div></div></div>")
             }
             $(".scourColumn").append("<div class='total golumn'><div class='holeheadertotal'>total</div><div>");
             fillCard();
